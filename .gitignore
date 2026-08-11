@@ -16,3 +16,9 @@
 local.properties
 .env
 debug.keystore
+
+# Ensure Gradle Wrapper files are included in git repository
+!gradle/wrapper/gradle-wrapper.jar
+!gradle/wrapper/gradle-wrapper.properties
+!gradlew
+!gradlew.bat
