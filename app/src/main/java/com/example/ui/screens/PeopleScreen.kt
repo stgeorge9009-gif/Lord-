@@ -37,7 +37,9 @@ fun PeopleScreen(
     val monthAssistances by viewModel.selectedMonthAssistances.collectAsStateWithLifecycle()
 
     val assistanceMap = remember(monthAssistances) {
-        monthAssistances.associateBy { it.person.id }
+        monthAssistances.mapNotNull { details ->
+            details.person?.let { p -> p.id to details }
+        }.toMap()
     }
 
     Scaffold(

@@ -18,7 +18,7 @@ data class MonthlyAssistanceWithDetails(
         parentColumn = "personId",
         entityColumn = "id"
     )
-    val person: PersonEntity,
+    val person: PersonEntity? = null,
     @Relation(
         parentColumn = "id",
         entityColumn = "assistanceId"
@@ -32,5 +32,5 @@ data class StandardPackageItemWithProduct(
         parentColumn = "productId",
         entityColumn = "id"
     )
-    val product: ProductEntity
+    val product: ProductEntity? = null
 )

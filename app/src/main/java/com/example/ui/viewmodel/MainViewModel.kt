@@ -252,7 +252,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     fun addAssistanceToCalendar(context: Context, details: MonthlyAssistanceWithDetails): Boolean {
         return CalendarUtil.addAssistanceToDeviceCalendar(
             context = context,
-            personName = details.person.name,
+            personName = details.person?.name ?: "مستحق المساعدة",
             scheduledIsoDate = details.assistance.scheduledDate,
             totalAmount = details.assistance.totalAmount
         )

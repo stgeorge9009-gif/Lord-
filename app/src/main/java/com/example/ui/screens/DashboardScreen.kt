@@ -342,11 +342,13 @@ fun DashboardScreen(
                 }
             } else {
                 items(monthAssistances.take(5), key = { it.assistance.id }) { details ->
-                    PersonCard(
-                        person = details.person,
-                        assistanceDetails = details,
-                        onClick = { onNavigateToPersonDetail(details.person.id) }
-                    )
+                    details.person?.let { person ->
+                        PersonCard(
+                            person = person,
+                            assistanceDetails = details,
+                            onClick = { onNavigateToPersonDetail(person.id) }
+                        )
+                    }
                 }
             }
 

@@ -149,11 +149,13 @@ fun MonthlyAssistanceScreen(
                     verticalArrangement = Arrangement.spacedBy(12.dp)
                 ) {
                     items(filteredList, key = { it.assistance.id }) { details ->
-                        PersonCard(
-                            person = details.person,
-                            assistanceDetails = details,
-                            onClick = { onNavigateToPersonDetail(details.person.id) }
-                        )
+                        details.person?.let { person ->
+                            PersonCard(
+                                person = person,
+                                assistanceDetails = details,
+                                onClick = { onNavigateToPersonDetail(person.id) }
+                            )
+                        }
                     }
                     item {
                         Spacer(modifier = Modifier.height(24.dp))
