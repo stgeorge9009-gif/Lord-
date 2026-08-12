@@ -223,7 +223,7 @@ fun CalendarScreen(
                                                         fontWeight = if (isSelected || day.isToday) FontWeight.Bold else FontWeight.Normal
                                                     ),
                                                     color = when {
-                                                        isSelected -> Color.White
+                                                        isSelected -> Color(0xFF0F2240)
                                                         !day.isCurrentMonth -> MaterialTheme.colorScheme.onSurfaceVariant.copy(alpha = 0.4f)
                                                         else -> MaterialTheme.colorScheme.onSurface
                                                     }

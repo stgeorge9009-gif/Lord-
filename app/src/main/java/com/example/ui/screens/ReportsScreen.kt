@@ -120,25 +120,25 @@ fun ReportsScreen(
                 Card(
                     modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(20.dp),
-                    colors = CardDefaults.cardColors(containerColor = ChurchNavy)
+                    colors = CardDefaults.cardColors(containerColor = ChurchGoldContainer)
                 ) {
                     Column(modifier = Modifier.padding(20.dp)) {
                         Text(
                             text = "تقرير ${CalendarUtil.getArabicMonthName(selectedMonth)} $selectedYear",
                             style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                            color = ChurchGold
+                            color = Color(0xFF78350F)
                         )
                         Spacer(modifier = Modifier.height(8.dp))
                         Text(
                             text = "إجمالي تكلفة المساعدات = ${monthTotalCost.toInt()} جنيه",
                             style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.Bold),
-                            color = Color.White
+                            color = Color(0xFF0F2240)
                         )
                         Spacer(modifier = Modifier.height(4.dp))
                         Text(
                             text = "عدد المساعدات المستحقة: ${monthAssistances.size} مساعدة لـ $totalPersons شخص/أسرة",
-                            style = MaterialTheme.typography.bodyMedium,
-                            color = Color.White.copy(alpha = 0.8f)
+                            style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Medium),
+                            color = Color(0xFF1E293B)
                         )
                     }
                 }

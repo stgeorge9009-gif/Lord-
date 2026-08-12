@@ -148,17 +148,18 @@ class ChurchRepository(
         val itemsToInsert = mutableListOf<AssistanceItemEntity>()
 
         for (item in packageWithProducts) {
+            val product = item.product ?: continue
             val qty = item.packageItem.quantity
             if (qty > 0) {
-                val unitPrice = item.product.currentPrice // Snapshot unit price!
+                val unitPrice = product.currentPrice // Snapshot unit price!
                 val total = unitPrice * qty
                 calculatedTotal += total
                 itemsToInsert.add(
                     AssistanceItemEntity(
                         assistanceId = assistanceId,
-                        productId = item.product.id,
-                        productName = item.product.name,
-                        productUnit = item.product.unit,
+                        productId = product.id,
+                        productName = product.name,
+                        productUnit = product.unit,
                         unitPriceAtTime = unitPrice,
                         quantity = qty,
                         totalPrice = total

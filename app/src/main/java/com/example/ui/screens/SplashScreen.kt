@@ -21,9 +21,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.R
-import com.example.ui.theme.ChurchGold
-import com.example.ui.theme.ChurchNavy
-import com.example.ui.theme.ChurchNavyDark
+import com.example.ui.theme.*
 import kotlinx.coroutines.delay
 
 @Composable
@@ -40,7 +38,7 @@ fun SplashScreen(
             .fillMaxSize()
             .background(
                 Brush.verticalGradient(
-                    colors = listOf(ChurchNavyDark, ChurchNavy)
+                    colors = listOf(Color(0xFFF8FAFC), Color(0xFFE2E8F0))
                 )
             )
             .testTag("splash_screen"),
@@ -57,7 +55,7 @@ fun SplashScreen(
                 modifier = Modifier
                     .size(100.dp)
                     .clip(CircleShape)
-                    .background(ChurchGold.copy(alpha = 0.2f)),
+                    .background(ChurchGoldContainer),
                 contentAlignment = Alignment.Center
             ) {
                 Text(
@@ -74,28 +72,28 @@ fun SplashScreen(
                     fontWeight = FontWeight.Bold,
                     fontSize = 36.sp
                 ),
-                color = Color.White
+                color = Color(0xFF0F2240)
             )
 
             Spacer(modifier = Modifier.height(8.dp))
 
             Text(
                 text = "تطبيق إدارة المساعدات والخدمة الكنسية",
-                style = MaterialTheme.typography.titleMedium,
-                color = ChurchGold
+                style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
+                color = Color(0xFF78350F)
             )
 
             Spacer(modifier = Modifier.height(32.dp))
 
             Card(
-                colors = CardDefaults.cardColors(containerColor = Color.White.copy(alpha = 0.1f)),
+                colors = CardDefaults.cardColors(containerColor = ChurchGoldContainer.copy(alpha = 0.5f)),
                 shape = RoundedCornerShape(16.dp),
                 modifier = Modifier.fillMaxWidth(0.9f)
             ) {
                 Text(
                     text = "«كُلَّ مَا فَعَلْتُمُوهُ بِأَحَدِ إِخْوَتِي هؤُلاَءِ الصِّغَارِ، فَبِي فَعَلْتُمْ»\n(متى 25: 40)",
-                    style = MaterialTheme.typography.bodyLarge.copy(lineHeight = 26.sp),
-                    color = Color.White,
+                    style = MaterialTheme.typography.bodyLarge.copy(lineHeight = 26.sp, fontWeight = FontWeight.Bold),
+                    color = Color(0xFF0F2240),
                     textAlign = TextAlign.Center,
                     modifier = Modifier.padding(20.dp)
                 )
@@ -109,13 +107,13 @@ fun SplashScreen(
                     .fillMaxWidth(0.7f)
                     .height(52.dp)
                     .testTag("start_service_button"),
-                colors = ButtonDefaults.buttonColors(containerColor = ChurchGold),
+                colors = ButtonDefaults.buttonColors(containerColor = ChurchGoldContainer),
                 shape = RoundedCornerShape(26.dp)
             ) {
                 Text(
                     text = "الدخول للخدمة",
                     style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                    color = Color.White
+                    color = Color(0xFF0F2240)
                 )
             }
         }

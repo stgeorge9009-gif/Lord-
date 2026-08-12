@@ -428,13 +428,13 @@ fun PersonDetailScreen(
                                 Icon(
                                     imageVector = if (isDelivered) Icons.Default.Cancel else Icons.Default.CheckCircle,
                                     contentDescription = null,
-                                    tint = Color.White
+                                    tint = Color(0xFF0F2240)
                                 )
                                 Spacer(modifier = Modifier.width(8.dp))
                                 Text(
                                     text = if (isDelivered) "تراجع عن التسليم" else "تسجيل التسليم الآن",
                                     style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                                    color = Color.White
+                                    color = Color(0xFF0F2240)
                                 )
                             }
                         }

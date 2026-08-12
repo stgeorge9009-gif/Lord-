@@ -62,7 +62,7 @@ fun MetricCard(
             Text(
                 text = value,
                 style = MaterialTheme.typography.headlineSmall.copy(fontWeight = FontWeight.Bold),
-                color = MaterialTheme.colorScheme.onSurface,
+                color = Color(0xFF0F2240), // Dark Navy / Black
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )
@@ -71,8 +71,8 @@ fun MetricCard(
 
             Text(
                 text = title,
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                style = MaterialTheme.typography.bodyMedium.copy(fontWeight = FontWeight.Bold),
+                color = Color(0xFF1E293B), // Dark Blue / Black
                 maxLines = 1,
                 overflow = TextOverflow.Ellipsis
             )

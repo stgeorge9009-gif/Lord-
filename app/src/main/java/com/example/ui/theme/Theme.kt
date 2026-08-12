@@ -13,15 +13,15 @@ import androidx.compose.ui.platform.LocalContext
 
 private val LightColorScheme = lightColorScheme(
     primary = ChurchNavy,
-    onPrimary = Color.White,
+    onPrimary = Color(0xFF0F2240),
     primaryContainer = Color(0xFFE2E8F0),
     onPrimaryContainer = ChurchNavyDark,
     secondary = ChurchGold,
-    onSecondary = Color.White,
+    onSecondary = Color(0xFF0F2240),
     secondaryContainer = ChurchGoldContainer,
-    onSecondaryContainer = Color(0xFF78350F),
+    onSecondaryContainer = Color(0xFF3D2E00),
     tertiary = ChurchGreen,
-    onTertiary = Color.White,
+    onTertiary = Color(0xFF0F2240),
     background = SlateBackground,
     onBackground = SlateTextPrimary,
     surface = SlateSurface,
@@ -31,29 +31,29 @@ private val LightColorScheme = lightColorScheme(
     outline = SlateBorder
 )
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Color(0xFF93C5FD),
-    onPrimary = ChurchNavyDark,
-    primaryContainer = ChurchNavy,
-    onPrimaryContainer = Color.White,
-    secondary = ChurchGoldLight,
-    onSecondary = Color(0xFF78350F),
-    secondaryContainer = Color(0xFF92400E),
-    onSecondaryContainer = ChurchGoldContainer,
-    tertiary = Color(0xFF86EFAC),
-    onTertiary = Color(0xFF14532D),
-    background = Color(0xFF0F172A),
-    onBackground = Color(0xFFF8FAFC),
-    surface = Color(0xFF1E293B),
-    onSurface = Color(0xFFF8FAFC),
-    surfaceVariant = Color(0xFF334155),
-    onSurfaceVariant = Color(0xFFCBD5E1),
-    outline = Color(0xFF475569)
+private val DarkColorScheme = lightColorScheme(
+    primary = ChurchNavy,
+    onPrimary = Color(0xFF0F2240),
+    primaryContainer = Color(0xFFE2E8F0),
+    onPrimaryContainer = ChurchNavyDark,
+    secondary = ChurchGold,
+    onSecondary = Color(0xFF0F2240),
+    secondaryContainer = ChurchGoldContainer,
+    onSecondaryContainer = Color(0xFF3D2E00),
+    tertiary = ChurchGreen,
+    onTertiary = Color(0xFF0F2240),
+    background = SlateBackground,
+    onBackground = SlateTextPrimary,
+    surface = SlateSurface,
+    onSurface = SlateTextPrimary,
+    surfaceVariant = Color(0xFFF1F5F9),
+    onSurfaceVariant = SlateTextSecondary,
+    outline = SlateBorder
 )
 
 @Composable
 fun MyApplicationTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
+    darkTheme: Boolean = false,
     dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {

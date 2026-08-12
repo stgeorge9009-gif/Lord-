@@ -72,7 +72,7 @@ fun PersonCard(
                 Text(
                     text = person.name,
                     style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                    color = MaterialTheme.colorScheme.onSurface,
+                    color = Color(0xFF0F2240),
                     maxLines = 1,
                     overflow = TextOverflow.Ellipsis
                 )
@@ -84,13 +84,13 @@ fun PersonCard(
                         imageVector = Icons.Default.People,
                         contentDescription = null,
                         modifier = Modifier.size(16.dp),
-                        tint = MaterialTheme.colorScheme.onSurfaceVariant
+                        tint = Color(0xFF475569)
                     )
                     Spacer(modifier = Modifier.width(4.dp))
                     Text(
                         text = "عدد أفراد الأسرة: ${person.familyMembers}",
-                        style = MaterialTheme.typography.bodySmall,
-                        color = MaterialTheme.colorScheme.onSurfaceVariant
+                        style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.SemiBold),
+                        color = Color(0xFF334155)
                     )
                 }
 
@@ -101,13 +101,13 @@ fun PersonCard(
                             imageVector = Icons.Default.Phone,
                             contentDescription = null,
                             modifier = Modifier.size(16.dp),
-                            tint = MaterialTheme.colorScheme.onSurfaceVariant
+                            tint = Color(0xFF475569)
                         )
                         Spacer(modifier = Modifier.width(4.dp))
                         Text(
                             text = person.phone,
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                            style = MaterialTheme.typography.bodySmall.copy(fontWeight = FontWeight.SemiBold),
+                            color = Color(0xFF334155)
                         )
                     }
                 }

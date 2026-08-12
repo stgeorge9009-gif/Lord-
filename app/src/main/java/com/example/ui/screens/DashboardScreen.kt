@@ -112,7 +112,7 @@ fun DashboardScreen(
                         .fillMaxWidth()
                         .height(130.dp),
                     shape = RoundedCornerShape(20.dp),
-                    colors = CardDefaults.cardColors(containerColor = ChurchNavy)
+                    colors = CardDefaults.cardColors(containerColor = ChurchGoldContainer)
                 ) {
                     Box(modifier = Modifier.fillMaxSize()) {
                         Image(
@@ -120,7 +120,7 @@ fun DashboardScreen(
                             contentDescription = null,
                             modifier = Modifier.fillMaxSize(),
                             contentScale = ContentScale.Crop,
-                            alpha = 0.35f
+                            alpha = 0.25f
                         )
                         Column(
                             modifier = Modifier
@@ -135,12 +135,12 @@ fun DashboardScreen(
                             ) {
                                 Surface(
                                     shape = RoundedCornerShape(20.dp),
-                                    color = ChurchGold
+                                    color = ChurchNavy.copy(alpha = 0.12f)
                                 ) {
                                     Text(
                                         text = "اليوم: ${CalendarUtil.formatArabicDisplayDate(CalendarUtil.getTodayIsoString())}",
                                         style = MaterialTheme.typography.labelSmall.copy(fontWeight = FontWeight.Bold),
-                                        color = Color.White,
+                                        color = Color(0xFF0F2240),
                                         modifier = Modifier.padding(horizontal = 10.dp, vertical = 4.dp)
                                     )
                                 }
@@ -148,7 +148,7 @@ fun DashboardScreen(
                             Text(
                                 text = "خدمة المساعدات الاجتماعية والأسر المحتاجة",
                                 style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
-                                color = Color.White
+                                color = Color(0xFF0F2240)
                             )
                         }
                     }
@@ -295,7 +295,7 @@ fun DashboardScreen(
                                         Text(
                                             text = action.title,
                                             style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
-                                            color = MaterialTheme.colorScheme.onSurface
+                                            color = Color(0xFF0F2240)
                                         )
                                     }
                                 }
