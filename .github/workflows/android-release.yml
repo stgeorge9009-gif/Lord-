@@ -27,6 +27,12 @@ jobs:
       - name: Make Gradlew Executable
         run: chmod +x gradlew
 
+      - name: Verify Gradle Wrapper Binary
+        run: |
+          file gradle/wrapper/gradle-wrapper.jar
+          unzip -t gradle/wrapper/gradle-wrapper.jar
+          ./gradlew --version
+
       - name: Build Unsigned Release APK & AAB
         run: |
           ./gradlew assembleRelease --no-daemon
