@@ -154,7 +154,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     ) {
         viewModelScope.launch {
             val person = PersonEntity(
-                id = id,
+                id = if (id <= 0L) 0L else id,
                 name = name.trim(),
                 phone = phone.trim(),
                 address = address.trim(),
@@ -199,7 +199,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
     ) {
         viewModelScope.launch {
             val product = ProductEntity(
-                id = id,
+                id = if (id <= 0L) 0L else id,
                 name = name.trim(),
                 unit = unit.trim(),
                 currentPrice = currentPrice.coerceAtLeast(0.0),

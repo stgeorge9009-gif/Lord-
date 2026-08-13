@@ -23,8 +23,9 @@ class ChurchRepository(
     fun observePersonById(id: Long): Flow<PersonEntity?> = personDao.observePersonById(id)
 
     suspend fun insertOrUpdatePerson(person: PersonEntity): Long {
-        return if (person.id == 0L) {
-            personDao.insertPerson(person)
+        return if (person.id <= 0L) {
+            val entityToInsert = if (person.id != 0L) person.copy(id = 0L) else person
+            personDao.insertPerson(entityToInsert)
         } else {
             personDao.updatePerson(person)
             person.id
@@ -79,8 +80,9 @@ class ChurchRepository(
     }
 
     suspend fun insertOrUpdateProduct(product: ProductEntity): Long {
-        return if (product.id == 0L) {
-            productDao.insertProduct(product)
+        return if (product.id <= 0L) {
+            val entityToInsert = if (product.id != 0L) product.copy(id = 0L) else product
+            productDao.insertProduct(entityToInsert)
         } else {
             productDao.updateProduct(product)
             product.id
@@ -237,7 +239,7 @@ class ChurchRepository(
     }
 
     suspend fun ensureMonthlyAssistancesForActivePersons(year: Int, month: Int) {
-        val persons = personDao.getAllPersons().first()
+        val persons = personDao.getAllPersonsList()
         for (person in persons) {
             val existing = assistanceDao.getAssistanceForPersonAndMonth(person.id, year, month)
             if (existing == null) {

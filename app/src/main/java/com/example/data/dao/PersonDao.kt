@@ -12,6 +12,9 @@ interface PersonDao {
     @Query("SELECT * FROM persons WHERE isActive = 1 ORDER BY name ASC")
     fun getAllPersons(): Flow<List<PersonEntity>>
 
+    @Query("SELECT * FROM persons WHERE isActive = 1 ORDER BY name ASC")
+    suspend fun getAllPersonsList(): List<PersonEntity>
+
     @Query("SELECT * FROM persons WHERE isActive = 1 AND name LIKE '%' || :query || '%' ORDER BY name ASC")
     fun searchPersons(query: String): Flow<List<PersonEntity>>
 
