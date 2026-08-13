@@ -150,6 +150,11 @@ fun DashboardScreen(
                                 style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold),
                                 color = Color(0xFF0F2240)
                             )
+                            Text(
+                                text = "Created by Mekhaeel Yasser",
+                                style = MaterialTheme.typography.labelMedium.copy(fontWeight = FontWeight.Medium),
+                                color = Color(0xFF0F2240).copy(alpha = 0.8f)
+                            )
                         }
                     }
                 }
@@ -353,7 +358,33 @@ fun DashboardScreen(
             }
 
             item {
-                Spacer(modifier = Modifier.height(24.dp))
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(vertical = 12.dp),
+                    shape = RoundedCornerShape(16.dp),
+                    colors = CardDefaults.cardColors(containerColor = ChurchNavy.copy(alpha = 0.05f))
+                ) {
+                    Column(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(16.dp),
+                        horizontalAlignment = Alignment.CenterHorizontally
+                    ) {
+                        Text(
+                            text = "Created by Mekhaeel Yasser",
+                            style = MaterialTheme.typography.titleSmall.copy(fontWeight = FontWeight.Bold),
+                            color = ChurchNavy
+                        )
+                        Spacer(modifier = Modifier.height(2.dp))
+                        Text(
+                            text = "تم الصنع بواسطة ميخائيل ياسر",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+                    }
+                }
+                Spacer(modifier = Modifier.height(16.dp))
             }
         }
     }
